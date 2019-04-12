@@ -1,0 +1,297 @@
+<html>
+    <head>
+        <title>DashBoard</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/circle.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/pie.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    </head>
+    <body style="background-color: #fafafa">
+
+        <div class="uk-grid uk-grid-small" data-uk-grid>
+            <div class="uk-width-1-5@m uk-visible@m" style="background-color: #323641">
+                <div id="left-nav">
+                    <div id="left-nav-wrap">
+                        <ul class="uk-nav uk-nav-default uk-nav-parent-icon" data-uk-nav>
+                            <a class="uk-navbar-item uk-logo" href="#">
+                                <img class="uk-border-circle" src="https://s3.ap-south-1.amazonaws.com/fquser/profile/iStock-476085198.jpg" width="50" height="50">
+                            </a>
+                            <li class="uk-nav-header uk-text-bold"><h5 class="uk-margin-remove-bottom">Dashboard</h5></li>
+                            <li><a href=""><i class="far fa-calendar-check fa-lg uk-margin-small-right"></i>Home</a></li>
+                            <li><a href=""><i class="fas fa-drafting-compass fa-lg uk-margin-small-right"></i>Profile</a></li>
+                            
+                            <li><a href=""><i class="fas fa-archive fa-lg uk-margin-small-right"></i>Settings</a></li>
+                                
+                            <li><a href="#"><i class="far fa-life-ring fa-lg uk-margin-small-right"></i>Tips</a></li>
+                                
+                        </ul>
+                        <div class="left-content-box uk-margin-top">
+                    
+                            <h5>Reports</h5>
+                            <div>
+                                <span class="uk-text-small">Confidence Level<small>(+50)</small></span>
+                                <progress class="uk-progress" value="75" max="100"></progress>
+                            </div>
+                            <div>
+                                <span class="uk-text-small">GScore <small>(+40)</small></span>
+                                <progress class="uk-progress success" value="45" max="100"></progress>
+                            </div>
+                            <div>
+                                <span class="uk-text-small">Feedback </span>
+                                <!-- <progress class="uk-progress warning" value="12" max="100"></progress> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar-bottom">
+                        <ul class="uk-subnav uk-flex uk-flex-center" data-uk-grid>
+                            <li>
+                                <a href="" class="uk-icon-link" data-uk-icon="icon: home" title="Home" data-uk-tooltip></a>
+                            </li>        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="uk-width-expand uk-margin-small-right">
+                <div class="uk-navbar-container" uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <a style="padding-left:10px; padding-right:10px;">
+                            <img class="uk-border-circle" src="https://d33wubrfki0l68.cloudfront.net/8c24880f9addb0cddf4951d90ea010f08702ac40/4f2f5/images/aboutus/sarso.jpeg" width="50" height="50">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="uk-grid uk-grid-small uk-child-width-1-3" data-uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body" style="border-style: solid; border-width: 1px">
+                            <h3 class="uk-card-title">Grammar Score</h3>
+                            <p>75%</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-hover uk-card-default uk-card-body" style="border-style: solid; border-width: 1px">
+                            <h3 class="uk-card-title">Confidence Level</h3>
+                            <p>45%</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-hover uk-card-default uk-card-body" style="border-style: solid; border-width: 1px">
+                            <h3 class="uk-card-title">Face Emotion</h3>
+                            <p>Sad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="uk-margin-medium">
+
+                <div class="uk-child-width-1-1 uk-grid uk-grid-small uk-text-center" data-uk-grid>
+                    <h3 class="uk-margin-small uk-text-bold uk-margin-remove-top">Confidence Level</h3>
+                    <div id="chart_div" style="margin-left:auto; margin-right:auto; height: 30rem; width: 60rem;"></div>
+                </div>
+                
+                <hr class="uk-margin-medium">
+
+                <div class="uk-grid uk-grid-small" data-uk-grid>
+                    <div class="uk-width-1-1">
+                        <h4 class="uk-text-bold uk-text-center uk-text-capitalize">
+                            Grammar Check
+                        </h4>
+                    </div>
+                        <div class="uk-width-1-1">
+                            <div class="uk-container uk-margin-small-left">
+                                <ul uk-accordion>
+                                    <li class="uk-open">
+                                        <a class="uk-accordion-title" href="#">Grammar</a>
+                                        <div class="uk-accordion-content uk-text-capitalize">
+                                                <table class="uk-table uk-table-divider">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Suggestiom</th>
+                                                                <th>Message</th>
+                                                                <th>Affected Word</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>......</td>
+                                                                <td>......</td>
+                                                                <td>......</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="uk-accordion-title uk-text-capitalize" href="#">Verb</a>
+                                        <div class="uk-accordion-content">
+                                                <table class="uk-table uk-table-divider">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Suggestion</th>
+                                                                <th>Message</th>
+                                                                <th>Affected Word</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>......</td>
+                                                                <td>......</td>
+                                                                <td>......</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="uk-accordion-title uk-text-capitalize" href="#">Determiner</a>
+                                        <div class="uk-accordion-content">
+                                                <table class="uk-table uk-table-divider">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Suggestion</th>
+                                                                <th>Message</th>
+                                                                <th>Affected Word</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>......</td>
+                                                                <td>......</td>
+                                                                <td>......</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="uk-accordion-title uk-text-capitalize" href="#">Pronouns</a>
+                                            <div class="uk-accordion-content">
+                                                    <table class="uk-table uk-table-divider">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Suggestiom</th>
+                                                                <th>Message</th>
+                                                                <th>Affected Word</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>......</td>
+                                                                    <td>......</td>
+                                                                    <td>......</td>>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        
+                                            </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="uk-grid uk-grid-small uk-child-width-1-1" data-uk-grid>
+                    <h2 class="uk-margin-remove-bottom">
+                        <span class="uk-align-left">GScore</span>
+                        <span class="uk-align-right">75%
+                    </h2>
+                    <progress id="js-progressbar" class="uk-progress success" value="75" max="100"></progress>
+                </div>
+
+                <div class="uk-grid uk-grid-small uk-child-width-1-1" data-uk-grid>
+                    <div class="uk-width-1-1">
+                        <h3 class="uk-heading-line uk-text-center uk-margin-small-left uk-margin-remove"><span>Speech Emotions</span></h3>
+                    </div>
+                    <div class="uk-width-1-1">
+                        <div class="uk-grid uk-grid-small" data-uk-grid>
+                            <div class="uk-width-1-4">
+                                <div class="uk-grid uk-grid-small uk-child-width-1-1" data-uk-grid>
+                                    <div class="clearfix uk-margin-large-left">
+                                        <div class="c100 p25 green">
+                                            <span>25%</span>
+                                            <div class="slice">
+                                                <div class="bar"></div>
+                                                <div class="fill"></div>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="uk-text-muted uk-text-small uk-margin-remove uk-text-center">Happiness</h3>  
+                            </div>
+                            <div class="uk-width-1-4">
+                                <div class="uk-grid uk-grid-small uk-child-width-1-1" data-uk-grid>
+                                    <div class="clearfix uk-margin-large-left">
+                                        <div class="c100 p70 green">
+                                            <span>70%</span>
+                                            <div class="slice">
+                                                <div class="bar"></div>
+                                                <div class="fill"></div>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="uk-text-muted uk-text-small uk-text-center uk-margin-remove">Angry</h3>  
+                            </div>
+                            <div class="uk-width-1-4">
+                                <div class="uk-grid uk-grid-small uk-child-width-1-1" data-uk-grid>
+                                    <div class="clearfix uk-margin-large-left">
+                                        <div class="c100 p70 green">
+                                            <span>70%</span>
+                                            <div class="slice">
+                                                <div class="bar"></div>
+                                                <div class="fill"></div>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="uk-text-muted uk-text-small uk-text-center uk-margin-remove">Sad</h3>  
+                            </div>
+                            <div class="uk-width-1-4">
+                                <div class="uk-grid uk-grid-small uk-child-width-1-1" data-uk-grid>
+                                    <div class="clearfix uk-margin-large-left">
+                                        <div class="c100 p30 green">
+                                            <span>30%</span>
+                                            <div class="slice">
+                                                <div class="bar"></div>
+                                                <div class="fill"></div>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="uk-text-muted uk-text-small uk-margin-remove uk-text-center">Surprise</h3>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- 
+                <hr class="uk-margin-medium"> -->
+
+                <!-- <div class="uk-child-width-1-1 uk-grid uk-grid-small uk-text-center" data-uk-grid>
+                    <h3 class="uk-margin-small uk-text-bold uk-margin-remove-top">Topic name</h3>
+                    <div id="chartdiv" style="margin-left:auto; margin-right:auto; height: 30rem; width: 60rem;"></div>
+                </div> -->
+
+                <hr class="uk-margin-medium">
+
+                <div class="uk-child-width-1-1 uk-grid uk-grid-small uk-text-center" data-uk-grid>
+                    <h3 class="uk-margin-small uk-text-bold uk-margin-remove-top">Facial Emotions</h3>
+                    <div id="piechart" style="margin-left:auto; margin-right:auto; height: 30rem; width: 60rem;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
